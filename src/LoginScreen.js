@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const width = Dimensions.get("screen").width;
 const circleHeight = width / 5.6;
@@ -15,7 +16,7 @@ const circleHeight = width / 5.6;
 export default function LoginScreen({ setData }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  console.log(width / circleHeight);
+  // console.log(width / 30);
   return (
     <View style={styles.container}>
       <View>
@@ -34,12 +35,33 @@ export default function LoginScreen({ setData }) {
         </Text>
       </View>
       <View>
-        <View style={styles.input}>
-          <TextInput
-            placeholder="Username"
-            onChangeText={(e) => setUsername(e)}
-            style={{ flex: 1 }}
-          />
+        <View style={[styles.input, { backgroundColor: "#FDCD84" }]}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flex: 1,
+            }}
+          >
+            <Text>DStudio_agency</Text>
+            <View
+              style={{
+                height: 30,
+                width: 30,
+                borderRadius: 30 / 2,
+                backgroundColor: "#fff",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <MaterialCommunityIcons
+                name="lightning-bolt"
+                size={24}
+                color="black"
+              />
+            </View>
+          </View>
         </View>
         <View style={styles.input}>
           <TextInput
@@ -70,6 +92,7 @@ export default function LoginScreen({ setData }) {
               alignItems: "center",
               justifyContent: "center",
               backgroundColor: "#B12442",
+              maxWidth: 800,
             },
           ]}
         >
@@ -101,10 +124,13 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     height: 60,
-    backgroundColor: "#e6e6e6",
+    backgroundColor: "#F5F5F5",
     borderRadius: 10,
     padding: 10,
     marginVertical: 10,
+    alignSelf: "center",
+    maxWidth: 500,
+    paddingHorizontal: 15,
   },
   bold: {
     fontSize: 30,
