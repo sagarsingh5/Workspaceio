@@ -14,7 +14,7 @@ const width = Dimensions.get("screen").width;
 const circleHeight = width / 5.6;
 
 export default function LoginScreen({ setData }) {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("DStudio_agency");
   const [password, setPassword] = useState("");
   // console.log(width / 30);
   return (
